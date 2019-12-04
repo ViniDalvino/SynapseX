@@ -767,10 +767,17 @@ body
 		<span class="CodeTypename">void</span> <a class="Anchor" href="#syn_fireclickdetector">syn_fireclickdetector</a>(<span class="CodeTypename">object<span class="CodeTypenameVariant"&gt;</span>&lt;ClickDetector&gt;</span></span> ClickDetector, <span class="CodeTypename"><span class="CodeTypenameVariant"&gt;</span>&lt;number/nil&gt;</span></span> Distance)
 	</p>
 	<p class="CodeDescription">
-		Fires the designated ClickDetector with distance provided. If distance isn't provided, it will default to 0.
+		Fires the designated ClickDetector with distance provided. If distance isn't provided, it will default to 0. Exemple show a way of teleporting to a part then returning back to a position which can be useful if the developr setted a distance for the click detector. 
 	</p>
 	<p class="CodeExample">
-		No example provided
+		local workspace = game.Workspace
+		local localplayer = game.Players.LocalPlayer
+		local localplayerInWorkspace = game.Workspace:FindFirstChild(localplayer.Name)
+		
+		local backupPos = localplayerWorkspace.HumanoidRootPart.CFrame -- set a backup position so you can get back where you were
+		localplayerInWorkspace.HumanoidRootPart.CFrame = workspace.part.CFrame -- teleport to the part
+		fireclickdetector(part.ClickDetector,1) 
+		localplayerInWorkspace.HumanoidRootPart.CFrame = backupPos -- teleport back	
 	</p>
 </div><div id="syn_firetouchinterest" class="CodeEntry">
 	<p class="CodeDefinition">
